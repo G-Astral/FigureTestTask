@@ -13,18 +13,35 @@
             <ColumnDefinition Width="*" MinWidth="200"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" >
-            <ComboBox x:Name="FigureSelection" Height="25" Width="150" SelectionChanged="FigureChanged">
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <ComboBox x:Name="FigureSelection" Grid.Row="0" Height="25" Width="150" SelectionChanged="FigureChanged">
                 <ComboBoxItem>Прямоугольник</ComboBoxItem>
                 <ComboBoxItem>Квадрат</ComboBoxItem>
                 <ComboBoxItem>Окружность</ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox x:Name="ColorSelection" Grid.Row="1" Height="25" Width="150" SelectionChanged="ColorChanged">
+                <ComboBoxItem>Красный</ComboBoxItem>
+                <ComboBoxItem>Зелёный</ComboBoxItem>
+                <ComboBoxItem>Синий</ComboBoxItem>
             </ComboBox>
         </Grid>
 
         <GridSplitter Grid.Column="1" Width="5" ResizeBehavior="PreviousAndNext"/>
 
         <Grid Grid.Column="2">
-            <TextBlock x:Name="TestCheck" Text="Ничего не выбрано" Height="20" Width="Auto" HorizontalAlignment="Center"></TextBlock>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="0" x:Name="TestCheck" Text="Фигура не выбрана!" Height="20" Width="Auto" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="1" x:Name="TestCheck1" Text="Цвет не выбран!" Height="20" Width="Auto" HorizontalAlignment="Center"></TextBlock>
         </Grid>
     </Grid>
 </Window>

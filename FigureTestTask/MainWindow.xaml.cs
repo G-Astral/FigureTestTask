@@ -40,5 +40,21 @@ namespace FigureTestTask
                     break;
             }
         }
+
+        private void ColorChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (ColorSelection.SelectedIndex)
+            {
+                case 0:
+                    TestCheck1.Text = "Выбран красный цвет!";
+                    break;
+                case 1:
+                    TestCheck1.Text = "Выбран зелёный цвет!";
+                    break;
+                case 2:
+                    TestCheck1.Text = "Выбрана синий цвет!";
+                    break;
+            }
+        }
     }
 }
